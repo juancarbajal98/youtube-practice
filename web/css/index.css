@@ -1,0 +1,116 @@
+/* 
+Selector Combinations 
+    examples
+    - '.class1.class2 {}' elements with both classes 1 and 2
+    - 'h1.class1 {}' h1 elements with class 1
+    - '#id1.class1.class2 {}' elements with id 1 and both classes 1 and 2
+
+    Introducing a SPACE between selectors allows for an ancestor and 
+    child relationship to be enforced when applying styles
+    - 'selector1 selector2  {}' will style all elements matching selector2 and sit inside of a selector1 element 
+    - selector1 DOES NOT have to be a DIRECT parent of selector2
+
+    Introducing a COMMA between selectors allows for styles to be
+    applied to multiple selectors
+*/
+.box{
+    /* sets dimensions for inner content */
+    height: 100px;
+    width: 100px;
+    /* spacing between content and border */
+    padding: 20px; /* spacing between content and border - common in buttons */
+    margin: 50px; /* spacing between border and other elements */
+    border: 10px solid salmon; 
+    /* entire div sums up to be 160x160 => height contributes 100, padding 20 both ways, border 20 both ways = 160 */
+    /* highlighting the div shows something much bigger but that is because margin does not contribute to size but 
+    instead only to its actual spacing between other elements */
+    background-color: sienna;
+    /* 
+    different dimension units
+    - px is a set fixed dimenstion
+    - % relates to the parent of that element
+    - em common with fonts: scales with actual font size of parent
+       - i.e. if your font size is 5px then 1em == 5px 
+    - rem always references root font size 
+    */ 
+}
+
+.box h1{
+    font-family: Tahoma;
+    font-weight: 800;
+    font-style: italic;
+    text-decoration: underline;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 16px;
+}
+
+a {
+    /* remove underline from link*/ 
+    text-decoration: none;
+    color: red;
+}
+
+a:hover {
+    color: blue;
+}
+
+a:active{
+    /* can see by holding down*/ 
+    color:green;
+}
+
+.unordered-list{
+    border: 1px solid grey;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 30px  ;
+}
+
+.unordered-list h2{
+    text-align: center;
+}
+
+.unordered-list ul{
+    padding: 0;
+    list-style: none;
+}
+
+.unordered-list li {
+    padding-bottom: 8px;
+    border-bottom: dotted 1px forestgreen;
+}
+
+.my-form{
+    padding: 20px;
+}
+
+.my-form .form-group{
+    padding-bottom: 15px;
+}
+
+.my-form label{
+    display: block;
+}
+
+.my-form input[type="text"],
+.my-form textarea{
+    padding: 8px;
+    width: 100%;
+}
+
+.button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+}
+
+.block{
+    float: left;
+    width: 33.3%;
+    border: 1px solid slateblue;
+    padding: 10px;
+    /* this style considers extra dimension like padding and border and applies it to width */
+    box-sizing: border-box;
+}
